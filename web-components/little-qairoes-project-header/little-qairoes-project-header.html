@@ -1,0 +1,41 @@
+<!-- Polymer dependencies -->
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<link rel="import" href="../../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../../bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../little-qairoes-project-icons/little-qairoes-project-icons.html">
+
+<!-- Style dependency -->
+<link rel="import" href="little-qairoes-project-header-style.html">
+
+<dom-module id="little-qairoes-project-header">
+  <template>
+    <style is="custom-style" include="little-qairoes-project-header-style">
+      :host {
+        display: block;
+      }
+    </style>
+
+    <!-- then the app-header -->
+    <app-header>
+      <app-toolbar>
+        <paper-icon-button
+          icon="default:menu"
+          on-tap="_toggleDrawer">
+        </paper-icon-button>
+        <div main-title>Little Qairoes Project</div>
+      </app-toolbar>
+    </app-header>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'little-qairoes-project-header',
+
+      _toggleDrawer: function() {
+        this.fire('toggle-drawer');
+      }
+    });
+  </script>
+</dom-module>
